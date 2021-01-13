@@ -26,14 +26,11 @@ Inga tomtenamn får vara hårdkodade i den rekursiva loopen (det är ok att hår
 datastrukturen). Du väljer själv om du skriver koden i Java eller Kotlin.
  */
 fun main(){
-    val file = File("Tomtefil.txt")
-    val input = mutableListOf<String>()
+    fun createInputFile(fileName: String): List<String> = File(fileName).readLines()
+
     val bosses = mutableListOf<String>()
     val employees = mutableListOf<String>()
-
-    file.bufferedReader().forEachLine {
-        input.add(it)
-    }
+    val input = createInputFile("Tomtefil.txt") as MutableList<String>
 
     fun findBosses(name: String?): List<String>{
         for (lines in input) {
