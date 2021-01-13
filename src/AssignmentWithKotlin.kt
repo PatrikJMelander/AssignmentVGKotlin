@@ -25,14 +25,6 @@ Gråsuggan, Myran och Bladlusen.
 Inga tomtenamn får vara hårdkodade i den rekursiva loopen (det är ok att hårdkoda i skapandet av
 datastrukturen). Du väljer själv om du skriver koden i Java eller Kotlin.
  */
-
-/**
- * Created by Patrik Melander
- * Date: 2021-01-11
- * Time: 11:26
- * Project: AssignmentVG Kotlin
- * Copyright: MIT
- */
 fun main(){
     val file = File("Tomtefil.txt")
     val input = mutableListOf<String>()
@@ -123,8 +115,4 @@ fun main(){
         employees.clear()
         bosses.clear()
     }
-
-
-
 }
-
