@@ -32,11 +32,8 @@ fun main(){
     val employees = mutableListOf<String>()
 
     file.bufferedReader().forEachLine {
-//        println(it)
         input.add(it)
     }
-    for (line in input)
-        println(line)
 
     fun findBosses(name: String?): List<String>{
         for (lines in input) {
@@ -102,10 +99,11 @@ fun main(){
         println("Vill du skriva ut chefer (1) eller anställda (2)")
         val userChoice = readLine()!!
 
-        if (userChoice == "1")
-            getBosses(userInput)
-        else if (userChoice == "2")
-            getEmployees(userInput)
+        when (userInput) {
+            "1" -> getBosses(userInput)
+            "2" -> getEmployees(userInput)
+            else -> println("Du måste ange 1 eller 2")
+        }
 
         println("Vill du söka efter en ny tomte Ja(1) Nej(2)")
         val userExit = readLine()!!
